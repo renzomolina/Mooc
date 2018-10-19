@@ -48,11 +48,12 @@ class DatabaseSeeder extends Seeder
                 factory(\App\Level::class,1)->create(['name'=>'Advanced']);
                 factory(\App\Category::class,5)->create();
 
-                factory(\App\Course::class,1)->create();
-                /*->each(
+                factory(\App\Course::class,1)->create()
+                ->each(
                     function(\App\Course $c){
-                    $c->goals()->saveMany(factory(\App\Goal::class,1)->create());
-                    $c->requirements()->saveMany(factory(\App\Requirement::class,1)->create( ));} );*/
+                    $c->goals()->saveMany(factory(\App\Goal::class,1)->create(['course_id'=> $c->id]));
+                    $c->requirements()->saveMany(factory(\App\Requirement::class,1)->create(['course_id'=> $c->id] ));
+                } );
 
     }
 }

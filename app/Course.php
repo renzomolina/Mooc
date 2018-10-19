@@ -76,6 +76,7 @@ class Course extends Model
     {
         return $this->hasMany(Requirement::class)->select('id','course_id','requirement');
     }
+
     public function students()
     {
         return $this->belongsToMany(Student::class);
@@ -85,4 +86,5 @@ class Course extends Model
     {
         return $this->belongsTo(Teacher::class);
     }
+
 }

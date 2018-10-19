@@ -28,11 +28,11 @@ class CreateUsersTable extends Migration
             $table->foreign('role_id')->references('id')->on('roles');
             $table->string('name');
             $table->string('last_name')->nullable();
-            $table->string('slug');
             $table->string('email')->unique();
             $table->string('password');
-            $table->rememberToken();
             $table->string('picture')->nullable();
+            $table->rememberToken();
+
 
 
             //crashier columns
@@ -73,10 +73,11 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
-        Schema::dropIfExists('roles');
+
+
         Schema::dropIfExists('subscriptions');
         Schema::dropIfExists('user_social_accounts');
-
+        Schema::dropIfExists('users');
+        Schema::dropIfExists('roles');
     }
 }

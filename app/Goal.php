@@ -25,6 +25,6 @@ class Goal extends Model
     //
     public function course()
     {
-        return $this->belongsTo(Course::Class);
+       return $this->belongsTo(Course::Class);
     }
 }

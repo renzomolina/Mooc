@@ -17,9 +17,9 @@ class CreateTeachersTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->string('title')->nulleable();
-            $table->text('biography')->nulleable();
-            $table->string('website_url')->nulleable();
+            $table->string('title')->nullable();
+            $table->text('biography')->nullable();
+            $table->string('website_url')->nullable();
             $table->timestamps();
         });
     }

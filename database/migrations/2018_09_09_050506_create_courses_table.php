@@ -24,7 +24,6 @@ class CreateCoursesTable extends Migration
             $table->foreign('level_id')->references('id')->on('levels');
             $table->string('name');
             $table->text('descripcion');
-            $table->string('slug');
             $table->string('picture')->nullable();
             $table->enum('status',[
                \App\Course::PUBLISHED,

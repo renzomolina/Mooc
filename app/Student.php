@@ -30,6 +30,6 @@ public function courses()
 }
     public function user()
     {
-        return $this->belongsToMany(User::class)->select('id','role_id','name','email');
+        return $this->belongsTo(User::class)->select('id','role_id','name','email');
     }
 }

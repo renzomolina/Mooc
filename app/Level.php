@@ -22,12 +22,13 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $description
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Level whereDescription($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Level whereName($value)
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Course[] $course
  */
 class Level extends Model
 {
     //
     public function course()
     {
-        return $this->belongsToMany(Course::class);
+       return $this->hasOne(Course::class);
     }
 }

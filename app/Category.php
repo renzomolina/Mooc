@@ -24,6 +24,6 @@ class Category extends Model
 {
     public function course()
     {
-        return $this->belongsToMany(Course::Class);
+       return $this->hasOne(Course::class);
     }
 }
