@@ -3,9 +3,21 @@
 $body-bg: #f8fafc;
 
 // Typography
-$font-family-sans-serif: "Nunito", sans-serif;
+$font-family-sans-serif: "Raleway", sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
+$text-color: #636b6f;
+
+//navbar
+$navbar-default-bg: #fff;
+
+//buttons
+$btn-default-color:$text-color;
+
+//panels
+$panel-default-heading-bg:#fff;
+
+$app-bg-color: #c0355d;
 
 // Colors
 $blue: #3490dc;

@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\App;
 
 /**
  * App\User
@@ -51,6 +52,15 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
     use Notifiable;
+
+    protected static function bot(){
+        parent::boot();
+        static::creating(function(User $user){
+            if(!App::runningInConsole()){
+                $user->slug = str_slug($user->name . "" . $user->last_name, "-");
+            }
+        });
+    }
 
     /**
      * The attributes that are mass assignable.
